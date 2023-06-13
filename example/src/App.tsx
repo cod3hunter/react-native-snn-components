@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { View } from 'react-native';
 import {
   ThemeProvider,
   light,
@@ -38,7 +38,7 @@ const agenda = [
 export default function App() {
   return (
     <ThemeProvider value={light}>
-      <View style={{ padding: 24, marginTop: 32 }}>
+      <View>
         <PresenceList
           {...{ agenda, students }}
           agendaIndex={0}

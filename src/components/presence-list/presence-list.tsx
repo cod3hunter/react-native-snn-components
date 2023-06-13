@@ -20,6 +20,7 @@ export type PresenceProps = {
   }[];
   onChange: (student: number | string, value: string) => void;
   agendaIndex: number;
+  testID?: string;
 };
 
 export const PresenceList = ({
@@ -28,6 +29,7 @@ export const PresenceList = ({
   onChange,
   agenda,
   agendaIndex,
+  testID = 'presence-list',
 }: PresenceProps) => {
   const [expanded, setExpanded] = useState(false);
 
@@ -61,6 +63,7 @@ export const PresenceList = ({
       <TouchableOpacity
         style={styles.headContainer}
         onPress={toggleExpandCallback}
+        testID={`${testID}:expand`}
       >
         <View style={styles.titleContainer}>
           <Text style={styles.titleText}>{name}</Text>
@@ -74,7 +77,7 @@ export const PresenceList = ({
       </TouchableOpacity>
       {expanded && (
         <View>
-          {Object.keys(students).map((studentId) => (
+          {Object.keys(students).map((studentId, idx) => (
             <View style={styles.infosContainer} key={studentId}>
               <View>
                 <Text style={styles.infoText}>{students[studentId].name} </Text>
@@ -89,6 +92,7 @@ export const PresenceList = ({
                       disabled={disableParticipant(studentId)}
                       style={styles.headContainer}
                       onPress={onSelectPresence(studentId, 'P')}
+                      testID={`${testID}:presence:${idx}`}
                     >
                       <Icon
                         name={
@@ -104,6 +108,7 @@ export const PresenceList = ({
                       disabled={disableParticipant(studentId)}
                       style={styles.headContainer}
                       onPress={onSelectPresence(studentId, 'F')}
+                      testID={`${testID}:abscence:${idx}`}
                     >
                       <Icon
                         name={
@@ -120,6 +125,7 @@ export const PresenceList = ({
                         disabled={disableParticipant(studentId)}
                         style={styles.headContainer}
                         onPress={onSelectPresence(studentId, 'D')}
+                        testID={`${testID}:quitter:${idx}`}
                       >
                         <Icon
                           name={

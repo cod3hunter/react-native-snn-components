@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render icon 1`] = `
+<Text
+  pointerEvents="none"
+  selectable={false}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "transparent",
+      },
+      Object {
+        "color": "green",
+        "fontSize": 12,
+      },
+    ]
+  }
+  testID="feather-icon"
+>
+  □
+</Text>
+`;

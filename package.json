@@ -55,6 +55,8 @@
     "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
+    "@testing-library/jest-native": "^5.4.2",
+    "@testing-library/react-native": "^12.1.2",
     "@types/jest": "^28.1.2",
     "@types/react": "^18.2.9",
     "@types/react-native": "0.68.0",
@@ -72,6 +74,7 @@
     "react-native-builder-bob": "^0.20.0",
     "react-native-size-matters": "^0.4.0",
     "react-native-vector-icons": "^9.2.0",
+    "react-test-renderer": "^18.2.0",
     "release-it": "^15.0.0",
     "typedoc": "^0.24.8",
     "typescript": "^4.5.2"
@@ -89,9 +92,15 @@
   "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ],
     "modulePathIgnorePatterns": [
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@react-native|react-native|react-native-size-matters)/)"
     ]
   },
   "commitlint": {

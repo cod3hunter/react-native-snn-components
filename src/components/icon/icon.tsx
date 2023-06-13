@@ -51,5 +51,7 @@ try {
 }
 
 export const Icon = ({ name, size, color, style }: IconProps) => {
-  return <FeatherIcon {...{ name, size, color, style }} />;
+  return (
+    <FeatherIcon testID="feather-icon" {...{ name, size, color, style }} />
+  );
 };

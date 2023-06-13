@@ -51,13 +51,14 @@
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.2.2",
     "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
-    "@types/react": "~17.0.21",
-    "@types/react-native": "0.70.0",
+    "@types/react": "^18.2.9",
+    "@types/react-native": "0.68.0",
+    "@types/react-native-vector-icons": "^6.4.13",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.4.1",
@@ -69,7 +70,10 @@
     "react": "18.2.0",
     "react-native": "0.71.8",
     "react-native-builder-bob": "^0.20.0",
+    "react-native-size-matters": "^0.4.0",
+    "react-native-vector-icons": "^9.2.0",
     "release-it": "^15.0.0",
+    "typedoc": "^0.24.8",
     "typescript": "^4.5.2"
   },
   "resolutions": {
@@ -155,5 +159,6 @@
         }
       ]
     ]
-  }
+  },
+  "dependencies": {}
 }
